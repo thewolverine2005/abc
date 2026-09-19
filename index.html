@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kisan Connect | Direct Agri Marketplace</title>
+    <meta
+      name="description"
+      content="Kisan Connect connects farmers, FPOs, and buyers in a transparent agriculture marketplace."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo">K</div>
+          <div>
+            <div class="brand-name">Kisan Connect</div>
+            <div class="brand-sub">Farm-to-market network</div>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-btn active" data-role="buyer">Buyer</button>
+          <button class="nav-btn" data-role="farmer">Farmer</button>
+          <button class="nav-btn" data-role="fpo">FPO</button>
+          <button class="nav-btn" data-role="admin">Admin</button>
+        </nav>
+      </header>
+
+      <main class="page-container">
+        <section class="page-panel active" data-panel="buyer">
+          <div class="hero-box">
+            <div class="hero-copy">
+              <span class="eyebrow">Zero brokerage</span>
+              <h1>Buy fresh produce direct from verified farmers and FPOs.</h1>
+              <p>Trusted procurement with transparent pricing, quality checks, and safe digital escrow.</p>
+              <div class="hero-actions">
+                <button class="primary-btn">View all lots</button>
+                <button class="secondary-btn">Talk to FPO</button>
+              </div>
+            </div>
+
+            <div class="hero-side-card">
+              <div class="mini-stat">
+                <span>Today’s mandi rate</span>
+                <strong>₹2,840 / qtl</strong>
+              </div>
+              <div class="mini-stat soft">
+                <span>On-time dispatch</span>
+                <strong>96.4%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span>Direct savings</span>
+              <strong>Up to 18.5%</strong>
+            </div>
+            <div class="stat-card">
+              <span>Lots available</span>
+              <strong>64 verified</strong>
+            </div>
+            <div class="stat-card">
+              <span>Escrow secured</span>
+              <strong>100%</strong>
+            </div>
+            <div class="stat-card">
+              <span>Buyer rating</span>
+              <strong>4.8/5</strong>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <input id="product-search" type="text" placeholder="Search produce, wheat, onion, rice..." />
+            <select id="sort-select">
+              <option value="price-low">Lowest farm-gate price</option>
+              <option value="savings-high">Highest savings</option>
+              <option value="freshness">Latest harvest</option>
+            </select>
+          </div>
+
+          <div class="chip-row">
+            <button class="chip active" data-filter="all">All crops</button>
+            <button class="chip" data-filter="wheat">Wheat</button>
+            <button class="chip" data-filter="rice">Rice</button>
+            <button class="chip" data-filter="onion">Onion</button>
+            <button class="chip" data-filter="pulses">Pulses</button>
+            <button class="chip" data-filter="potato">Potato</button>
+          </div>
+
+          <div class="trust-strip">
+            <div><strong>1,200+</strong><span>verified farmers</span></div>
+            <div><strong>99.2%</strong><span>quality checks</span></div>
+            <div><strong>48 hrs</strong><span>settlement window</span></div>
+            <div><strong>18.5%</strong><span>avg. buyer savings</span></div>
+          </div>
+
+          <div class="market-layout">
+            <div class="product-grid" id="product-grid"></div>
+
+            <aside class="checkout-panel">
+              <div class="checkout-box">
+                <h3>Secure escrow checkout</h3>
+                <div class="checkout-row">
+                  <span>Selected lot</span>
+                  <strong id="checkout-name">-</strong>
+                </div>
+                <div class="checkout-row qty-row">
+                  <span>Order quantity</span>
+                  <div class="qty-box">
+                    <button class="qty-btn" data-step="-10" type="button">−</button>
+                    <input id="qty-input" type="number" min="10" value="70" />
+                    <button class="qty-btn" data-step="10" type="button">+</button>
+                  </div>
+                </div>
+                <div class="checkout-row">
+                  <span>Escrow total</span>
+                  <strong id="checkout-total">₹0</strong>
+                </div>
+                <button id="place-order" class="primary-btn full">Deposit into escrow</button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="page-panel" data-panel="farmer">
+          <div class="role-header green">
+            <div>
+              <span class="eyebrow">Farmer panel</span>
+              <h2>Sell your produce directly to trusted buyers.</h2>
+            </div>
+            <button class="primary-btn">List produce</button>
+          </div>
+
+          <div class="stats-grid compact">
+            <div class="stat-card"><span>Live price</span><strong>₹2,800/qtl</strong></div>
+            <div class="stat-card"><span>Orders</span><strong>12 this week</strong></div>
+            <div class="stat-card"><span>Payments</span><strong>Escrow active</strong></div>
+            <div class="stat-card"><span>Trust score</span><strong>96/100</strong></div>
+          </div>
+
+          <div class="two-col-layout">
+            <div class="info-card">
+              <h3>Crop listing</h3>
+              <form class="mini-form">
+                <input type="text" value="Sharbati Golden Wheat" />
+                <input type="text" value="100 qtl" />
+                <select>
+                  <option>Wheat</option>
+                  <option>Rice</option>
+                  <option>Onion</option>
+                </select>
+                <button class="primary-btn full" type="button">Publish listing</button>
+              </form>
+            </div>
+
+            <div class="info-card">
+              <h3>Buyer inquiries</h3>
+              <ul class="list-box">
+                <li><span>Bulk buyer inquiry</span><strong>₹2.75L</strong></li>
+                <li><span>Warehouse request</span><strong>3 days</strong></li>
+                <li><span>Support</span><strong>Verified</strong></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="page-panel" data-panel="fpo">
+          <div class="role-header">
+            <div>
+              <span class="eyebrow">FPO control room</span>
+              <h2>Manage allocation, logistics, and member supply.</h2>
+            </div>
+            <button class="primary-btn">Sync inventory</button>
+          </div>
+
+          <div class="stats-grid compact">
+            <div class="stat-card"><span>Members</span><strong>620</strong></div>
+            <div class="stat-card"><span>Active lots</span><strong>14</strong></div>
+            <div class="stat-card"><span>Escrow</span><strong>₹1.84 Cr</strong></div>
+            <div class="stat-card"><span>Fulfillment</span><strong>96%</strong></div>
+          </div>
+
+          <div class="info-card table-card">
+            <h3>Member listings</h3>
+            <table>
+              <thead>
+                <tr><th>Member</th><th>Crop</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Sanjay Patil</td><td>Wheat</td><td>Verified</td></tr>
+                <tr><td>Asha More</td><td>Onion</td><td>Verified</td></tr>
+                <tr><td>Kiran Reddy</td><td>Rice</td><td>KYC pending</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="page-panel" data-panel="admin">
+          <div class="role-header">
+            <div>
+              <span class="eyebrow">Operations overview</span>
+              <h2>Track marketplace health, logistics, and trust signals.</h2>
+            </div>
+            <button class="primary-btn">Live sync</button>
+          </div>
+
+          <div class="stats-grid compact">
+            <div class="stat-card"><span>Total GMV</span><strong>₹14.82 Cr</strong></div>
+            <div class="stat-card"><span>In escrow</span><strong>₹2.18 Cr</strong></div>
+            <div class="stat-card"><span>Farmers</span><strong>18,420</strong></div>
+            <div class="stat-card"><span>Spoilage saved</span><strong>34.2 MT</strong></div>
+          </div>
+
+          <div class="info-card table-card">
+            <h3>FPO governance</h3>
+            <table>
+              <thead>
+                <tr><th>FPO</th><th>Members</th><th>Score</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Sahyadri FPO</td><td>620</td><td>96</td><td>Active</td></tr>
+                <tr><td>Narmada Valley FPO</td><td>480</td><td>94</td><td>Active</td></tr>
+                <tr><td>Tungabhadra Group</td><td>540</td><td>90</td><td>Review</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
